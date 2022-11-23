@@ -1,0 +1,7 @@
+# set the udev rule , make the device_port be fixed by bno055 imu
+#
+# Restart udev service
+#   sudo udevadm control --reload-rules && sudo udevadm trigger 
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="04e2", ATTRS{serial}=="04e2_1410", SYMLINK+="bno055"
+
